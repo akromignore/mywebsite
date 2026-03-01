@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+    <style>
+  body{
+  min-height: 100vh;
+  background: white;
+  display: block;
+  color:black;
+  padding:0;
+  font-family: Arial, Helvetica, sans-serif;
+  margin:0;
+}
+
+.button{
+  padding:13px 40px;
+  border: none;
+  border-radius: 8px;
+  font-size:25px;
+  background-color:black;
+  color:white;
+  position: absolute;
+  display: block;
+  left:85%;
+  z-index:1;
+  top:14px;
+}
+.button:hover{
+  background: rgb(121, 1, 1);
+  transition: 0.4s;
+  padding-left:70px;
+}
+.button i{
+  position: absolute;
+  opacity: 0;
+  left:-14px;
+  font-size: 34px;
+  top:14%;
+  z-index:-200;
+  transition:0.4s ease, opacity 0s ease-in-out;
+}
+.button:hover i{
+  left:5%;
+  opacity: 1;
+  top:14%;
+}
+.button span{
+  z-index:10;
+}
+.profil-card{
+  width:122%;
+  height:100%;
+  z-index:1000;
+  right:0;
+  position: absolute;
+  top:0;
+  justify-content: center;
+  align-items: center;
+  background:linear-gradient(rgb(1, 97, 141),rgb(0, 65, 73));
+  display: none;
+  text-align: center;
+  gap:0px;
+}
+#result{
+  font-size:25px;
+  color:white;
+  letter-spacing: 0.9px;
+}
+#header h1{
+  font-size:30px;
+  color:white;
+}
+#header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn{
+  position: relative;
+  padding:10px 40px;
+  border-radius: 8px;
+  color:white;
+  transition: all 0.5s ease;
+  border: none;
+  z-index:12;
+  left:45%;
+  overflow: hidden;
+  top:1%;
+  background:rgb(0, 179, 192);
+}
+.btn span{
+  font-size: 25px;
+  letter-spacing: 1px;
+  z-index:10;
+}
+.btn i{
+  font-size: 25px;
+  position: absolute;
+  right:-40px;
+  z-index:10;
+  transition: all 1s ease opacity 0.9s ease;
+  opacity: 0;
+}
+.btn:hover i{
+  right: 10px;
+  opacity: 1;
+}
+.btn:hover{
+  padding-right: 60px;
+  background:rgb(1, 97, 141);
+  box-shadow: 0 0 10px rgba(0,0,0,80);
+}
+.btn::before{
+  position: absolute;
+  content: "";
+  background: rgb(235, 235, 235);
+  filter: blur(8px);
+  width: 10px;
+  height: 75px;
+  top:0px;
+  left:10px;
+  opacity: 0;
+  transition:0.4s;
+  z-index:-1;
+}
+.btn:hover::before{
+  animation: fadeUp 0.4s linear;
+  left:129px;
+}
+@keyframes fadeUp{
+  0%{
+    opacity: 0;
+  }
+  10%,70%{
+    opacity:1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+.app{
+  background-color: black;
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  overflow: hidden;
+  grid-template-columns: 200px 1fr;
+}
+.sidebar{
+  width: 350px;
+  height: 100vh;
+  background-color: rgb(10, 10, 10);
+}
+.menu {
+  display: grid;
+  gap:35px;
+  padding:50px 30px;
+}
+.menu button{
+  width: 250px;
+  padding:15px 0;
+  background: none;
+  color:white;
+  border-radius: 9px;
+  border: none;
+  margin: 4px 0px;
+  font-size:16px;
+  position: relative;
+  justify-content: space-between;
+}
+.menu button i{
+  font-size: 22px;
+  margin:0px 10px;
+  position: absolute;
+  left:0;
+  top:27%;
+}
+.menu button.active,
+.menu button:hover{
+
+  background-color: rgba(240, 238, 238, 0.158);
+}
+.menu header h1{
+font-size:20px;
+font-weight: 600;
+letter-spacing: 1px;
+color:white;
+}
+.logo{
+  position:relative;
+  font-size: 38px;
+  color:white;
+  font-weight: 700;
+  top:22px;
+  left:38px;
+}
+.logo span{
+  color:rgb(255, 115, 0);
+}
+.main{
+  width: 80%;
+  padding:0px 20px;
+  min-height: 100%;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  position: absolute;
+  right:0;
+  background-color: rgb(41, 40, 40);
+  color:white;
+}
+.view{
+  opacity: 0;
+}
+.view.active{
+  opacity: 1;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  flex-wrap:nowrap;
+  flex-direction: row;
+  gap:30px;
+  transition: all 0.4s;
+}
+.card{
+  width: 320px;
+  height: 120px;
+  border:none;
+  background-color:white;
+  box-shadow:0 0 10px rgba(0,0,0.80);
+  border-radius: 9px;
+  transform: translateY(40px);
+  animation:fade 0.4s linear 1 forwards;
+  animation-play-state: running;
+  animation-range:view();
+}
+@keyframes fade{
+  from{
+    transform:translateY(40px);
+  }
+  to{
+    transform: translateY(0px);
+  }
+}
+#text{
+  padding:10px 20px;
+  border:none;
+  outline:none;
+  border-radius: 8px;
+  background: grey;
+  color:white;
+}
+.list{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  list-style:none;
+  position: relative;
+  right:200px;
+}
+.list li{
+  font-size:19px;
+  letter-spacing: 1px;
+  list-style: none;
+  position: relative;
+  top:100px;
+  right:50px;
+}
+.list button{
+  padding:10px 10px;
+  top:-4px;
+  right:-40px;
+  background: none;
+  font-size:20px;
+  border: none;
+  color:white;
+  position: absolute;
+}
+@media(max-width:450px){
+  body{
+    overflow: hidden;
+    min-height: 100vh;
+    position: relative;
+    width: 100%;
+  }
+  .button{
+  padding:13px 40px;
+  border: none;
+  border-radius: 8px;
+  font-size:25px;
+  background-color:black;
+  color:white;
+  position: absolute;
+  display: block;
+  left:85%;
+  z-index:1;
+  top:14px;
+}
+.button:hover{
+  background: rgb(121, 1, 1);
+  transition: 0.4s;
+  padding-left:70px;
+}
+.button i{
+  position: absolute;
+  opacity: 0;
+  left:-14px;
+  font-size: 34px;
+  top:14%;
+  z-index:-200;
+  transition:0.4s ease, opacity 0s ease-in-out;
+}
+.button:hover i{
+  left:5%;
+  opacity: 1;
+  top:14%;
+}
+.button span{
+  z-index:10;
+}
+.profil-card{
+  width:122%;
+  height:100%;
+  z-index:1000;
+  right:0;
+  position: absolute;
+  top:0;
+  justify-content: center;
+  align-items: center;
+  background:linear-gradient(rgb(1, 97, 141),rgb(0, 65, 73));
+  display: none;
+  text-align: center;
+  gap:0px;
+}
+#result{
+  font-size:25px;
+  color:white;
+  letter-spacing: 0.9px;
+}
+#header h1{
+  font-size:30px;
+  color:white;
+}
+#header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn{
+  position: relative;
+  padding:10px 40px;
+  border-radius: 8px;
+  color:white;
+  transition: all 0.5s ease;
+  border: none;
+  z-index:12;
+  left:45%;
+  overflow: hidden;
+  top:1%;
+  background:rgb(0, 179, 192);
+}
+.btn span{
+  font-size: 25px;
+  letter-spacing: 1px;
+  z-index:10;
+}
+.btn i{
+  font-size: 25px;
+  position: absolute;
+  right:-40px;
+  z-index:10;
+  transition: all 1s ease opacity 0.9s ease;
+  opacity: 0;
+}
+.btn:hover i{
+  right: 10px;
+  opacity: 1;
+}
+.btn:hover{
+  padding-right: 60px;
+  background:rgb(1, 97, 141);
+  box-shadow: 0 0 10px rgba(0,0,0,80);
+}
+.btn::before{
+  position: absolute;
+  content: "";
+  background: rgb(235, 235, 235);
+  filter: blur(8px);
+  width: 10px;
+  height: 75px;
+  top:0px;
+  left:10px;
+  opacity: 0;
+  transition:0.4s;
+  z-index:-1;
+}
+.btn:hover::before{
+  animation: fadeUp 0.4s linear;
+  left:129px;
+}
+@keyframes fadeUp{
+  0%{
+    opacity: 0;
+  }
+  10%,70%{
+    opacity:1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+.app{
+  background-color: black;
+  width: 100vh;
+  height: 100vh;
+  display: grid;
+  position: absolute;
+  overflow: hidden;
+  grid-template-columns: 200px 1fr;
+}
+.sidebar{
+  width: 300px;
+  height: 100vh;
+  background-color: rgb(10, 10, 10);
+}
+.menu {
+  display: grid;
+  gap:35px;
+  padding:50px 30px;
+}
+.menu button{
+  width: 250px;
+  padding:15px 0;
+  background: none;
+  color:white;
+  border-radius: 9px;
+  border: none;
+  margin: 7px 0;
+  font-size:16px;
+}
+.menu button.active,
+.menu button:hover{
+  background-color: rgba(240, 238, 238, 0.158);
+}
+.menu header h1{
+font-size:20px;
+font-weight: 600;
+letter-spacing: 1px;
+color:white;
+}
+.logo{
+  position:relative;
+  font-size: 38px;
+  color:white;
+  font-weight: 700;
+  top:22px;
+  left:38px;
+}
+.logo span{
+  color:rgb(255, 115, 0);
+}
+.main{
+  width:400px;
+  padding:0px 20px;
+  min-height: 100%;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  position: relative;
+  right:20%;
+  background-color: rgb(41, 40, 40);
+  color:white;
+}
+.view{
+  opacity: 0;
+}
+.view.active{
+  opacity: 1;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  flex-wrap:nowrap;
+  flex-direction: row;
+  gap:30px;
+  transition: all 0.4s;
+}
+.card{
+  width: 320px;
+  height: 120px;
+  border:none;
+  background-color:white;
+  box-shadow:0 0 10px rgba(0,0,0.80);
+  border-radius: 9px;
+  transform: translateY(40px);
+  animation:fade 0.4s linear 1 forwards;
+  animation-play-state: running;
+  animation-range:view();
+}
+@keyframes fade{
+  from{
+    transform:translateY(40px);
+  }
+  to{
+    transform: translateY(0px);
+  }
+}
+#text{
+  padding:10px 20px;
+  border:none;
+  outline:none;
+  border-radius: 8px;
+  background: grey;
+  color:white;
+}
+.list{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  list-style:none;
+  position: relative;
+  right:200px;
+}
+.list li{
+  font-size:19px;
+  letter-spacing: 1px;
+  list-style: none;
+  position: relative;
+  top:100px;
+  right:50px;
+}
+.list button{
+  padding:10px 10px;
+  top:-4px;
+  right:-40px;
+  background: none;
+  font-size:20px;
+  border: none;
+  color:white;
+  position: absolute;
+}
+}
+    </style>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="logo">Pro <span>system</span></div>
+      <div class="menu">
+        <header>
+          <h1>Main </h1>
+        <button  class="active" data-view="dashboard"><i class="fa-solid fa-house"></i>Dashboard</button>
+        <button data-view="statistics"><i class="fa-solid fa-chart-bar fa-rotate-270"></i>Statistics</button>
+        <button data-view="projects"><i class="fa-solid fa-diagram-project"></i>Projects</button>
+        </header>
+        <header>
+          <h1>IELTS Practice</h1>
+        <button data-view="speaking"><i class="fa-solid fa-microphone"></i>Speaking</button>
+        <button data-view="listening"><i class="fa-solid fa-headphones"></i>Listening</button>
+        <button data-view="reading"><i class="fa-solid fa-book-open"></i>Reading</button>
+        <button data-view="writing"><i class="fa-solid fa-pen-to-square"></i>Writing</button>
+        </header>
+                <header>
+          <h1>Others</h1>
+        <button data-view="analystics"><i class="fa-solid fa-chart-line"></i>Analystics</button>
+        <button data-view="settings"><i class="fa-solid fa-gear"></i>Settings</button>
+        <button data-view="feedback"><i class="fa-solid fa-comment-dots"></i>Feedback</button>
+        </header>
+      </div>
+      </aside>
+  <div class="main">
+    <header>
+      <h1 id="title">Dashboard</h1>
+    </header>
+    <section class="view active" id="dashboard">
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+    </section>
+    <section class="view" id="statistics"></section>
+    <section class="view" id="projects"></section>
+    <section class="view" id="speaking"></section>
+    <section class="view" id="listening"></section>
+    <section class="view" id="reading"></section>
+    <section class="view" id="writing"></section>
+    <section class="view" id="analystics">
+      <div class="list">
+        <input type="text" id="text">
+        <ul id="list">
+        </ul>
+        <button id="listbtn">add</button>
+      </div>
+    </section>
+    <section class="view" id="settings"></section>
+    <section class="view" id="feedback"></section>
+          <button class="button" id="btn-profil">
+          <i class="fa-solid fa-circle-user"></i> 
+          <span>
+          My Profile
+          </span>
+        </button>
+          <div class="profil-card" id="profil-card">
+            <button class="btn" id="exit-btn">
+              <span>Exit</span>
+            <label for="exit-btn"><i class="fa-solid fa-arrow-right-from-bracket"></i></label>
+           </button>
+            <header>
+              <h1>Your Profile Information</h1>
+              <p id="result"></p>
+            </header>
+            </div>
+  </div>
+</div>
+      <script>
+        const btn=document.getElementById("btn-profil");
+        const profilcard=document.getElementById("profil-card");
+        const exit=document.getElementById("exit-btn");
+        
+
+        document.getElementById("listbtn").addEventListener("click", function(){
+        
+          const li=document.createElement("li");
+
+          li.textContent=document.getElementById("text").value;
+
+          const deletebtn=document.createElement("button");
+          deletebtn.textContent="❌";
+
+          li.appendChild(deletebtn);
+      
+          document.getElementById("list").appendChild(li);
+          deletebtn.addEventListener("click", function(){
+            li.remove();
+          });
+          document.getElementById("text").value="";
+         
+        });
+        
+
+  btn.addEventListener("click", function(e){
+
+    profilcard.style.display="block";
+
+       let data = localStorage.getItem("user");
+
+   if(data){
+      let user = JSON.parse(data);
+
+      document.getElementById("result").innerHTML =
+      "Ism: " + user.name + "<br>Parol: " + user.pass + "<br>Email:" + user.email;
+   }
+  });
+
+  exit.addEventListener("click", function(e){
+    profilcard.style.display="none";
+  });
+//Menu buttons and Views content
+const buttons=document.querySelectorAll(".menu button");
+const views=document.querySelectorAll(".view");
+
+buttons.forEach(btn=>{
+  btn.addEventListener("click", function(){
+
+    buttons.forEach(b=>b.classList.remove("active"));
+    btn.classList.add("active");
+    views.forEach(v=>v.classList.remove("active"));
+
+    const target=btn.dataset.view;
+    document.getElementById(target).classList.add("active");
+
+    title.textContent=btn.textContent;
+  });
+});
+      </script>
+</body>
+</html>

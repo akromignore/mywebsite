@@ -1,0 +1,2290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discipline</title>
+    <meta name="keywords" content="Discipline, harvard roadmap">
+    <meta name="description"  content="uchun roadmap">
+    <meta name="rating" content="general">
+    <meta name="theme-color"  content="blue">
+    <meta name="application-name" content="Discipline by Akrom">
+    <meta name="author" content="Akrom">
+    <meta name="generator" content="Vs code">
+    <link rel="canonical" href="https://www.akromDiscpline.com">
+    <link rel="icon" href="picture.5.jpg">
+    <link rel="stylesheet" href="main.css" as="style">
+    <link rel="stylesheet" href="mobile.css" media="(max-content:500px)">
+    <meta property="og:image" content="picture1.jpg">
+    <meta property="og:title" content="Discipline by Akrom">
+    <meta property="og:description" content="Harvard uchun roadmap">
+    <link rel="stylesheet" href="file-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+    padding:0;
+    margin:0;
+    font-family:'Poppins', 'Montserrat';
+}
+*
+::before,
+::after{
+    box-sizing: border-box;
+}
+html, body{
+    background:rgb(0, 0, 58);
+    color:white;
+    min-height: 100vh;
+}
+.section{
+    height:100vh;
+    animation:fade linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 50%;
+}
+.section.active{
+  color:white;
+}
+.nav{
+    position: fixed;
+    width: 100%;
+    background:none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap:12px;
+    right:3%;
+    z-index:10000;
+    padding:10px 0px;
+}
+input[type="checkbox"]{
+    display: none;
+}
+.fa-xmark,
+.fa-bars{
+    opacity: 0;
+}
+.nav a{
+    color:rgb(236, 228, 228);
+    text-decoration: none;
+    font-size: 19px;
+    padding:1em;
+    background: none;
+    position: relative;
+    width: max-content;
+}
+.nav button{
+    color:white;
+    text-decoration: none;
+    font-size: 19px;
+    border-radius: 8px;
+    padding:10px 20px;
+    border: 2px solid blue;
+    background: none;
+    position: relative;
+    width: max-content;
+}
+.nav button:hover{
+    background-color: blue;
+    padding:10px 30px;
+    transition: all 0.4s ease;
+}
+.icons .icon{
+    opacity: 0;
+}
+.logo{
+    font-size: 35px;
+    position: absolute;
+    letter-spacing: 1.2px;
+    top:20%;
+    left:5%;
+    font-weight: 650;
+    color:#afaff0;
+}
+.logo img{
+    width: 40px;
+    height:40px;
+    border-radius: 50px;
+    position: relative;
+    top:10px;
+}
+.nav a.active,
+.nav a:hover{
+    border-radius:0px;
+    border-bottom:3.5px solid blue;
+    transition:0.1s ease-out;
+    color:rgb(5, 5, 230);
+    width: max-content;
+}
+.login-sign-box{
+    position:relative;
+    right:0.9%;
+    bottom:0%;
+    background:none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    height:100%;
+    gap:13px;
+    color:white;
+    z-index:0;
+}
+.login-sign-box button{
+    padding:10px 25px;
+    border:2px solid white;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:25px;
+    background: none;
+}
+.login-sign-box button a{
+    text-decoration: none;
+    color:white;
+    font-size: 22px;
+}
+.login-sign-box button a:hover{
+    color:blue;
+}
+.login-sign-box button:hover{
+    border: 2px solid blue;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 10px blue inset;
+}
+.accordion{
+    display: grid;
+    grid-column: 1/-1;
+    padding:20px 20px;
+    width: 1000px;
+    min-height:600px;
+    position: relative;
+    left: 28%;
+    top:13%;
+    z-index: 1;
+}
+.accordion header{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+.accordion header h1{
+    font-size:36px;
+    padding:10px 10px;
+    letter-spacing: 0.9px;
+    line-height: 20px;
+    color:white;
+}
+.acc-item{
+    border-bottom: 2px solid white;
+}
+.acc-haeder{
+    display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding:19px;
+   font-size: 22px;
+   letter-spacing: 2px;
+}
+.acc-body{
+    opacity: 0;
+    padding:0;
+    transition: 0.5s;
+}
+.acc-item.active .acc-body{
+    padding:19px;
+    opacity: 1;
+    font-size: 20px;
+    transform:scale(1);
+}
+.container{
+    position:relative;
+    width: 800px;
+    max-width: 100%;
+    min-height: 500px;
+    top:200px;
+    left:29%;
+    border:5px solid rgb(0, 19, 128);
+    background-color: white;
+    border-radius: 35px;
+    color:black;
+    overflow:hidden;
+}
+.container form{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height:100%;
+}
+.container input{
+    width:100%;
+    padding:12px 10px;
+    border-radius: 10px;
+    border: 2px solid darkgrey;
+    margin:8px 0;
+    outline:none;
+}
+.container input:focus{
+    border:2px solid blue;
+}
+.container span{
+    padding:10px 10px;
+    font-size:20px;
+}
+.container form header h1{
+    font-size:37px;
+    letter-spacing: 2px;
+}
+.container button{
+    background-color: #3604ac;
+    color: #fff;
+    font-size: 12px;
+    padding: 15px 50px;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.container button.hidden{
+    background-color: transparent;
+    border-color: #fff;
+}
+.form-container{
+    height: 100%;
+    top:0;
+    position: absolute;
+    transform: all 1s ease-in-out;
+}
+.container.active .sign-in{
+    transform:translateX(-200%);
+    opacity:1;
+}
+.sign-in{
+width: 50%;
+left:0;
+z-index:2;
+}
+.sign-up{
+    opacity: 0;
+    z-index:1;
+    width: 50%;
+    height: 100%;
+    transform: translateX(0);
+}
+.container.active .sign-up{
+    transform:translateX(100%);
+    z-index:5;
+    opacity: 1;
+    animation:sign-in linear;
+}
+@keyframes sign-in{
+    0%, 49.99%{
+        z-index:1;
+        opacity: 0;
+    }
+    50%, 100%{
+        opacity: 1;
+        z-index:5;
+    }
+}
+.toggle-container{
+    width:1200px;
+    height: 100%;
+    left:50%;
+    z-index:1000;
+    overflow: hidden;
+    position: absolute;
+    border-radius: 150px 0 0 150px;
+    transition: all 1.5s ease-in-out;
+    background:linear-gradient(to right,rgb(25, 9, 172),rgb(2, 14, 83));
+}
+.container.active .toggle-container{
+    transform:translateX(-100%);
+    border-radius: 0 150px 150px 0;
+}
+.toggle{
+    width: 200%;
+    height: 100%;
+    left:-100%;
+    position: relative;
+    transform: all 1s ease-in-out;
+}
+.container.active .toggle{
+    transform:translateX(50%);
+}
+.toggle-panel{
+    position: absolute;
+    height:100%;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    color:white;
+    transform: all 1s ease-in-out;
+    padding:10px 10px;
+}
+.toggle-left{
+    transform:translateX(-200%);
+    left:0;
+}
+.container.active .toggle-left{
+    transform: translateX(230%);
+}
+.toggle-right{
+    right:0;
+    transform:translateX(-250%);
+}
+.container.active .toggle-right{
+    transform:translateX(290%);
+}
+.container .icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:15px;
+    margin-bottom:26px;
+}
+.container .icons a{
+    background-color: white;
+    border:2px solid black;
+    border-radius: 10px;
+    text-decoration: none;
+    margin:5px 5px;
+    overflow: hidden;
+}
+.container i{
+    padding:15px 15px;
+    color:black;
+    font-size:22px;
+}
+.container a,
+.container i:hover{
+    background: var(--accent-color);
+    color:white;
+}
+#home header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    top:20%;
+    left:-24%;
+    gap:10px;
+}
+#home header h1{
+    font-size:40px;
+}
+#home header span{
+    font-size: 20px;
+}
+#home header .home-buttons{
+    gap:15px;
+    margin-top:10px;
+    position: relative;
+    left:-10%;
+}
+#home header .home-buttons button{
+    padding:10px 15px;
+    border: 2px solid blue;
+    box-shadow: 0 0 4px blue inset;
+    border-radius: 10px;
+    margin:0px 8px;
+    font-size: 17px;
+    color:blue;
+    background: none;
+    cursor: pointer;
+    position: relative;
+    z-index:0;
+}
+#home header .home-buttons button::before{
+    position: absolute;
+    top:0;
+    left:0;
+    content:"";
+    width: 100%;
+    height: 100%;
+    z-index:1;
+    color:white;
+    background: blue;
+    filter:blur(12px);
+    box-shadow: 0 0 15px blue;
+    box-shadow: 0 0 50px blue;
+    opacity: 0;
+}
+#home header .home-buttons button:after{
+    position: absolute;
+    content:attr(data-routine);
+    left:14px;
+    top:8px;
+    color:rgb(177, 175, 243);
+    z-index:2;
+    filter: brightness(10);
+    opacity: 0;
+}
+#home header .home-buttons button:hover::after{
+    opacity:1;
+    scale: 1;
+}
+#home header .home-buttons button:hover::before{
+    opacity: 1;
+    scale: 1;
+}
+#home header .icons {
+    display: flex;
+    gap:30px;
+    position: relative;
+    top:28px;
+    left:-175px;
+}
+#home header .icons i{
+    padding:1em;
+    border:2px solid rgb(2, 2, 88);
+    border-radius: 50px;
+    font-size: 24px;
+}
+#home header .fa-github{
+    color:brown;
+}
+#home header .fa-facebook-f{
+    color:blue;
+}
+#home header .fa-youtube{
+    color:red;
+}
+#home header .fa-google{
+    color:orange;
+}
+#home header .fa-github:hover{
+    background: brown;
+    transition: all 0.4s ease-in-out;
+    box-shadow: 0 0 30px brown;
+    color:white;
+}
+#home header .fa-facebook-f:hover{
+    background: blue;
+    transition: all 0.4s ease-in-out;
+    box-shadow: 0 0 35px blue;
+    color:white;
+}
+#home header .fa-youtube:hover{
+    background:red;
+    box-shadow: 0 0 30px red;
+    transition: all 0.4s ease-in-out;
+    color:white;
+}
+#home header .fa-google:hover{
+    background: orange;
+    transition: all 0.4s ease-in-out;
+    box-shadow: 0 0 30px orange;
+    color:white;
+}
+#home .pictures{
+    position:absolute;
+    top:0%;
+    right: 0;
+    width:300px;
+    display: grid;
+    grid-template-columns: 219px 1fr;
+    gap:50px;
+}
+#home header .pictures img {
+  -webkit-mask-image: radial-gradient(circle, rgb(1, 6, 82) 60%, transparent 100%);
+  mask-image: radial-gradient(circle, rgb(3, 2, 85) 60%, transparent 100%);
+  object-fit: contain;
+}
+#home header .pictures .picture1{
+    margin-top:-60px;
+    animation:fade3 1.5s ease-in-out infinite alternate-reverse;
+}
+#home header .pictures .picture2{
+    margin-top:10px;
+    margin-left:90px;
+    animation:fade2 1.7s ease-in-out infinite alternate-reverse;
+}
+#home header .pictures .picture3{
+    margin-left:0px;
+    margin-top:-30px;
+    animation:fade1 2s ease-in-out infinite alternate-reverse;
+}
+@keyframes fade1{
+    from{
+        transform:translate(0px, -0px);
+    }
+    to{
+        transform: translate(15px, -15px);
+    }
+}
+@keyframes fade2{
+    from{
+        transform:translate(0px, -0px);
+    }
+    to{
+        transform: translate(-15px, 15px);
+    }
+}
+
+@keyframes fade3{
+    from{
+        transform:translate(0px, -0px);
+    }
+    to{
+        transform: translate(15px,15px);
+    }
+}
+#routine header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    top:20%;
+    left:-25%;
+}
+#routine header h1{
+    font-size: 45px;
+    margin-left:-50px;
+    letter-spacing: 1.3px;
+}
+.card-container{
+    position: absolute;
+    display: flex;
+    top:290%;
+    left:29%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap:50px;
+}
+#routine header .card-container .card{
+    width: 380px;
+    min-height: 180px;
+    border: 2px solid blue;
+    box-shadow: 0 0 20px blue inset;
+    margin:0px 0;
+    border-radius: 16px;
+    overflow: hidden;
+    text-align: center;
+    padding:10px 10px;
+}
+#routine header .card-container .card i{
+    font-size: 50px;
+    padding:15px 0px;
+    color:rgb(52, 52, 255);
+    border: none;
+    border-radius: 100%;
+}
+#routine header .card-container .card:hover{
+    transform: translate(0,-10px);
+    transition: all 0.5s ease-in-out;
+    box-shadow: 0 0 0px blue inset, 0 0 40px blue;
+}
+#routine header .card-container .card p{
+    font-size: 15px;
+    letter-spacing: 1.2px;
+    font-weight: 500;
+}
+#goals header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+    top:22%;
+    gap:22px;
+}
+#goals header h1{
+    font-size: 45px;
+    letter-spacing: 1.2px;
+    font-weight: lighter;
+}
+#goals header .subtitle{
+font-size:15px;
+margin-top:-15px;
+}
+#goals header .cards{
+    display: flex;
+    flex-direction: row;
+    gap:22px;
+    margin-top:20px;
+}
+#goals header .cards .card{
+    width: 310px;
+    min-height: 150px;
+
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: center;
+    padding:10px 10px;
+    position: relative;
+    z-index:0;
+}
+#goals header .cards .card p{
+    font-size: 20px;
+    letter-spacing: 1.2px;
+    margin-top:40px;
+}
+#goals header .cards .card::after{
+    position: absolute;
+    content:attr(data-goals);
+    background:rgb(0, 0, 58);
+    width: 100%;
+    height: 100%;
+    top:0;
+    left:0;
+    z-index:1;
+    opacity: 0;
+}
+#goals header .cards .card::before{
+    position: absolute;
+    z-index:-1;
+    content:"";
+    background:linear-gradient(42deg,blue,rgb(0, 0, 66),blue,blue,rgb(2, 2, 104),blue,rgb(1, 1, 102));
+    width:calc(100% + 80px);
+    height:calc(100% + 80px);
+    top:0;
+    filter: blur(8px);
+    left:0;
+    background-size: 700%;
+    animation:card 25s linear infinite;
+}
+@keyframes card {
+    0%{background-position: 0 0 0;}
+    50%{background-position: 400% 0;}
+    100%{background-position: 0 0 0;}
+}
+#goals header .cards .card:hover::before{
+    opacity:0;
+}
+#goals header .cards .card:hover{
+    box-shadow:0 0 24px blue;
+    border:2px solid blue;
+    transform: translateY(-10px);
+    transition: 0.4s ease-in-out;
+    color:blue;
+    text-shadow:none;
+}
+
+.tabs{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+    position:relative;
+    top:20%;
+    left:0%;
+}
+.tab-menu{
+    padding:8px 20px;
+    background-color: white;
+    box-shadow: 0 0 5px 10px rgba(0,0,0,.1);
+    border-radius: 50px;
+    width: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+    position: relative;
+}
+.tab-menu label{
+    background-color:none;
+    color:black;
+    z-index:2;
+    cursor: pointer;
+    border-radius: 30px;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    height: 55px;
+    font-size:20px;
+    letter-spacing: 1.3px;
+}
+.tab-menu input[type="radio"]{
+    display: none;
+}
+.contents{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top:150%;
+    width: 100%;
+    height: 100%;
+}
+.content{
+    display: none;
+    transition: all 0.6s ease-in-out;
+}
+.glider{
+    width: 200px;
+    position: absolute;
+    top:10px;
+    left:15px;
+    height: 55px;
+    background: #84abf5;
+    display: block;
+    border-radius: 5em;
+    transition: all 0.4s ease-in-out;
+}
+#tab1:checked ~ label[for="tab1"]{
+    color:#02085e;
+}
+#tab2:checked ~ label[for="tab2"]{
+    color:#011d69;
+}
+#tab3:checked ~ label[for="tab3"]{
+    color:#01035e;
+}
+#tab4:checked ~ label[for="tab4"]{
+    color:#02045c;
+}
+#tab1:checked ~ .contents .c1{
+    display: block;
+}
+#tab2:checked ~ .contents .c2{
+    display: block;
+}
+
+#tab3:checked ~ .contents .c3{
+    display: block;
+}
+
+#tab4:checked ~ .contents .c4{
+    display: block;
+}
+#tab1:checked~.glider{
+transform: translateX(30px);
+box-shadow: 0 0 20px blue;
+}
+#tab2:checked ~ .glider{
+transform: translateX(100px);
+box-shadow: 0 0 20px blue;
+}
+#tab3:checked ~ .glider{
+transform: translateX(300px);
+box-shadow: 0 0 20px blue;
+}
+#tab4:checked ~ .glider{
+transform: translateX(567px);
+box-shadow: 0 0 20px blue;
+}
+#skills .cards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:20px;
+    flex-direction: row;
+    width: 100%;
+    position: absolute;
+    top:20%;
+    gap:15px;
+    left:0;
+}
+#skills .cards .card{
+    width: 480px;
+    min-height: 180px;
+    border: 2px solid blue;
+    border-radius: 15px;
+    text-align: center;
+    padding:10px 10px;
+    margin-left:-600px;
+     background:linear-gradient(to right, rgb(4, 4, 109) rgb(2, 2, 160));
+    margin-top:100px;
+    box-shadow: 0 0 30px  blue inset;
+}
+#skills .cards .card:hover{
+    box-shadow: 0 0 0px inset, 0 0 30px blue;
+    transform: translateY(-10px);
+    transition: all 0.4s ease-in-out;
+}
+#skills .cards .pictures{
+    position: absolute;
+    top:0%;
+    left:70%;
+    gap:20px;
+}
+#skills .cards .pictures img{
+    margin:50px 0px;
+    border-radius: 10px;
+    object-fit: cover;
+    
+}
+#skills ul{
+    list-style: none;
+    font-size: 20px;
+    margin-top:20px;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+#skills header{
+    margin-left:-70%;
+}
+#skills .subtitle{
+    font-size:20px;
+    letter-spacing: 0.9px;
+}
+#skills header h1{
+    font-size: 39px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+}
+#motivation .card-icons-with{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: row;
+    position: relative;
+    top:27%;
+    gap:15px;
+}
+.model{
+  width: 100%;
+  position: absolute;
+  height: 104%;
+  display: none;
+  background-color: rgba(87, 86, 86, 0.795);
+  z-index:5;
+  opacity: 1;
+  justify-content: center;
+  align-items: center;
+}
+.model .circle{
+  width: 50px;
+  height: 50px;
+  border-top:5px solid rgb(158, 250, 250);
+  border-radius:50%;
+  animation:spin 0.8s linear infinite;
+  position: absolute;
+  top:45%;
+  left:48%;
+  
+}
+#motivation .card{
+    width: 320px;
+    min-height: 180px;
+    padding:10px 10px;
+    border: 2px solid blue;
+    border-radius: 12px;
+    box-shadow: 0 0 10px  blue inset;
+    text-align: center;
+    font-size: 20px;
+    letter-spacing: 1px;
+    font-weight: lighter;
+}
+#motivation .card:hover{
+    box-shadow: 0 0 0px blue inset, 0 0 20px blue;
+    transform: translateY(-10px);
+    transition: all 0.4s ease-in-out;
+    color:blue;
+    letter-spacing: 1.2px;
+    line-height: 1.8;
+}
+#motivation header{
+    position: relative;
+    top:20%;
+    left:10%;
+}
+#motivation header h1{
+    font-size: 39px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+}
+#motivation header p{
+    font-size:19px;
+    letter-spacing: 0.9px;
+}
+#contact header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top:22%;
+    left:-32%;
+    font-size:34px;
+    flex-direction: column;
+}
+#contact header .text{
+    margin-left:180px;
+    font-size:22px;
+}
+#contact form{
+    position: relative;
+    top:30%;
+    left:20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 400px;
+    min-height:200px;
+    box-shadow:0 0 30px blue inset;
+    border-radius:12px;
+    padding:15px 15px;
+    gap:10px;
+}
+#contact form input{
+    padding:17px 10px;
+    width: 90%;
+    border: none;
+    border-radius: 8px;
+    background: black;
+    color:white;
+    outline:none;
+}
+#contact form input:focus{
+    border: 2px solid blue;
+    box-shadow:0 0 10px blue;
+}
+#contact form textarea{
+    width: 70%;
+    padding:25px 50px;
+    border-radius: 8px; 
+    background: black;
+    color:white;
+    outline:none;
+    border: none;
+}
+#contact form textarea:focus{
+    border: 2px solid blue;
+    color:white;
+    box-shadow:0 0 10px blue;
+}
+#contact form label{
+    font-size:20px;
+    margin-left:-70%;
+}
+#contact form button{
+    padding:15px 20px;
+    width: 70%;
+    border: 2px solid blue;
+    border-radius: 10px;
+    background: black;
+    color:white;
+    margin:10px 0px;
+}
+#contact form button:hover{
+    background: blue;
+    color:white;
+}
+
+@media(max-width:450px){
+    .section{
+    height:100vh;
+    animation:fade linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 50%;
+}
+html,body{
+    margin:0;
+    padding:0;
+    width: 100%;
+    overflow-x: hidden;
+    min-height:400vh;
+}
+.section.active{
+  color:white;
+}
+.nav{
+    position: fixed;
+    background:black;
+    width: 100%;
+    top:0;
+    right:0;
+    z-index:100;
+    gap:10px;
+    height:50px;
+}
+.bars{
+position:fixed;
+display: flex;
+justify-content: center;
+flex-direction: column;
+align-items: center;
+width: 250px;
+height: 505px;
+top:0;
+display: block;
+gap:20px;
+background: black;
+text-align: start;
+opacity: 1;
+transform: translateX(400px);
+border-bottom-left-radius: 10px;
+transition: all 0.8s ease-in-out;
+}
+.nav a{
+    position: relative;
+    display: flex;
+    left:35%;
+    top:7%;
+}
+.nav a.active,
+.nav a:hover{
+    border-bottom: none;
+    border: none;
+}
+.icons{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap:37px;
+    font-size: 20px;
+    position: relative;
+    right:29%;
+    bottom:74%;
+}
+.nav button{
+        position: relative;
+    display: flex;
+    left:35%;
+    top:7%;
+    background-color: blue;
+    color:white;
+}
+.fa-bars{
+    font-size:30px;
+     position: fixed;
+     top:2%;
+     right:2%;
+     opacity: 1;
+}
+#icon7{
+    padding:1em;
+    border:2px solid blue;
+}
+#icon7{
+    padding:10px 50px;
+    border: 2px solid blue;
+    border-radius: 8px;
+    margin-left:-4%;
+    margin-top:20px;
+}
+#icon7:hover{
+    background: blue;
+    color:white;
+}
+.fa-xmark{
+    font-size: 30px;
+    position: absolute;
+    top:8%;
+    left:6%;
+    opacity: 1;
+}
+.nav input[type="checkbox"]{
+    display: none;
+}
+#checkbox:checked ~ .bars{
+    display: block;
+    transform: translateX(0);
+     transition: all 0.7s ease-in-out;
+}
+
+.logo{
+    font-size: 30px;
+    position: absolute;
+    letter-spacing: 1.2px;
+    top:21%;
+    left:15%;
+    font-weight: 650;
+    color:#afaff0;
+    display: block;
+}
+.logo img{
+    width: 40px;
+    height:40px;
+    border-radius: 50px;
+    position: relative;
+    top:-37px;
+    left:-48px;
+    display: block;
+}
+.login-sign-box{
+    position:relative;
+    right:0.9%;
+    bottom:0%;
+    background:none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    height:100%;
+    gap:13px;
+    color:white;
+    z-index:0;
+    display: none;
+}
+.login-sign-box button{
+    padding:10px 25px;
+    border:2px solid white;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:25px;
+    background: none;
+    display: none;
+}
+.login-sign-box button a{
+    text-decoration: none;
+    color:white;
+    font-size: 22px;
+    display: none;
+}
+.login-sign-box button a:hover{
+    color:blue;
+    display: none;
+}
+.login-sign-box button:hover{
+    border: 2px solid blue;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 10px blue inset;
+    display: none;
+}
+.accordion{
+    display: grid;
+    grid-column: 1/-1;
+    padding:20px 20px;
+    width: 1000px;
+    min-height:600px;
+    position: relative;
+    left: 28%;
+    top:13%;
+    z-index: 1;
+}
+.accordion header{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+.accordion header h1{
+    font-size:36px;
+    padding:10px 10px;
+    letter-spacing: 0.9px;
+    line-height: 20px;
+    color:white;
+}
+.acc-item{
+    border-bottom: 2px solid white;
+}
+.acc-haeder{
+    display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding:19px;
+   font-size: 22px;
+   letter-spacing: 2px;
+}
+.acc-body{
+    opacity: 0;
+    padding:0;
+    transition: 0.5s;
+}
+.acc-item.active .acc-body{
+    padding:19px;
+    opacity: 1;
+    font-size: 20px;
+    transform:scale(1);
+}
+.container{
+    position:relative;
+    width: 325px;
+    max-width: 100%;
+    min-height: 630px;
+    top:108px;
+    left:3%;
+    border:5px solid rgb(0, 19, 128);
+    background-color: white;
+    border-radius: 35px;
+    color:black;
+    overflow:hidden;
+}
+.container form{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height:100%;
+    width: 100%;
+}
+.container input{
+    width:240px;
+    padding:12px 20px;
+    border-radius: 10px;
+    border: 2px solid darkgrey;
+    margin:8px -30px;
+    outline:none;
+    margin-left:10px;
+}
+.container input:focus{
+    border:2px solid blue;
+}
+.container p{
+font-size: 14px;
+text-transform:lowercase;
+margin:20px 0;
+font-weight: 500;
+margin-left: 15px;
+}
+.container header{
+    position: relative;
+    top:0px;
+    left:13px;
+}
+.container form header h1{
+    font-size:35px;
+    letter-spacing: 1px;
+}
+.container button{
+    background-color: #3604ac;
+    color: #fff;
+    font-size: 12px;
+    padding: 15px 30px;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    margin-left:30px;
+    cursor: pointer;
+}
+
+.container button.hidden{
+    background-color: transparent;
+    border-color: #fff;
+}
+.form-container{
+    height: 100%;
+    top:0;
+    position: absolute;
+    transform: all 1s ease-in-out;
+    opacity: 1;
+}
+.container.active .sign-in{
+    transform:translateY(400%);
+    opacity: 1;
+}
+.sign-in{
+width: 50%;
+top:15%;
+left:20%;
+z-index:2;
+opacity: 1;
+transform: translateY(0%);
+transform: all 3s ease-in-out;
+}
+.sign-up{
+    opacity: 1;
+    z-index:1;
+    width: 50%;
+    top:-15%;
+    height: 100%;
+    left:19%;
+    transform: translateY(100%);
+    transition: all 1s ease-in-out;
+}
+.container.active .sign-up{
+    transform:translateY(0);
+    z-index:5;
+    opacity: 1;
+    animation:sign-in linear;
+}
+@keyframes sign-in{
+    0%, 49.99%{
+        z-index:1;
+        opacity: 0.5;
+    }
+    50%, 100%{
+        opacity: 1;
+        z-index:5;
+    }
+}
+.toggle-container{
+    width:330px;
+    height: 100%;
+    top:-70%;
+    left:0;
+    z-index:10;
+    overflow: hidden;
+    position: absolute;
+    border-radius: 0 0 140px 140px;
+    transition: all 1.5s ease-in-out;
+    background:linear-gradient(to right,rgb(25, 9, 172),rgb(2, 14, 83));
+}
+.container.active .toggle-container{
+    transform:translate(0,135%);
+    border-radius: 140px 140px 0 0;
+}
+.toggle{
+    width: 200%;
+    height: 100%;
+    left:-100%;
+    position: relative;
+    transform: all 1s ease-in-out;
+}
+.container.active .toggle{
+    transform:translateY(50%);
+}
+.toggle-panel{
+    position: absolute;
+    height:100%;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    color:white;
+    transform: all 1s ease-in-out;
+    padding:10px 10px;
+}
+.toggle-left{
+    transform:translateY(200%);
+    left:0;
+}
+.container.active .toggle-left{
+    transform: translate(93%,-80%);
+}
+.toggle-right{
+    right:0;
+    transform:translate(-8%,30%);
+}
+.container.active .toggle-right{
+    transform:translateY(290%);
+}
+.container .icons{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    gap:19px;
+    position: relative;
+    top:0;
+    left:12%;
+}
+.container .icons a{
+    background-color: white;
+    border:2px solid black;
+    border-radius: 10px;
+    text-decoration: none;
+    margin:0 0px;
+    overflow: hidden;
+}
+.container i{
+    padding:15px 15px;
+    color:black;
+    font-size:20px;
+}
+.container a,
+.container i:hover{
+    background: var(--accent-color);
+    color:white;
+}
+.toggle-panel span{
+    font-size:9px;
+}
+#home header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    top:12%;
+    left:3%;
+    gap:10px;
+}
+#home header h1{
+    display: block;
+    font-size:25px;
+}
+#home header span{
+    font-size: 15px;
+    display: block;
+    letter-spacing: 0.9px;
+}
+#home header .home-buttons{
+    gap:15px;
+    margin-top:10px;
+    position: relative;
+    left:-10%;
+}
+#home header .home-buttons button{
+    padding:10px 15px;
+    border: 2px solid blue;
+    box-shadow: 0 0 4px blue inset;
+    border-radius: 10px;
+    margin:0px 8px;
+    font-size: 17px;
+    color:blue;
+    background: none;
+    cursor: pointer;
+    position: relative;
+    z-index:0;
+}
+#home header .home-buttons button::before{
+    position: absolute;
+    top:0;
+    left:0;
+    content:"";
+    width: 100%;
+    height: 100%;
+    z-index:1;
+    color:white;
+    background: blue;
+    filter:blur(12px);
+    box-shadow: 0 0 15px blue;
+    box-shadow: 0 0 50px blue;
+    opacity: 0;
+}
+#home header .home-buttons button:after{
+    position: absolute;
+    content:attr(data-routine);
+    left:14px;
+    top:10px;
+    color:rgb(177, 175, 243);
+    z-index:2;
+    filter: brightness(10);
+    opacity: 0;
+}
+#home header .home-buttons button:hover::after{
+    opacity:1;
+    scale: 1;
+}
+#home header .home-buttons button:hover::before{
+    opacity: 1;
+    scale: 1;
+}
+#home header .icons {
+    display: flex;
+    gap:30px;
+    position: relative;
+    top:345px;
+    flex-direction: row;
+    left:-12px;
+}
+#home header .icons i{
+    padding:1em;
+    border:2px solid rgb(2, 2, 88);
+    border-radius: 50px;
+    font-size: 18px;
+}
+#home header .fa-github{
+    color:brown;
+}
+#home header .fa-facebook-f{
+    color:blue;
+}
+#home header .fa-youtube{
+    color:red;
+}
+#home header .fa-google{
+    color:orange;
+}
+#home header .fa-github:hover{
+    background: brown;
+    transition: all 0.4s ease-in-out;
+    box-shadow: 0 0 30px brown;
+    color:white;
+}
+#home header .fa-facebook-f:hover{
+    background: blue;
+    transition: all 0.4s ease-in-out;
+    box-shadow: 0 0 35px blue;
+    color:white;
+}
+#home header .fa-youtube:hover{
+    background:red;
+    box-shadow: 0 0 30px red;
+    transition: all 0.4s ease-in-out;
+    color:white;
+}
+#home header .fa-google:hover{
+    background: orange;
+    transition: all 0.4s ease-in-out;
+    box-shadow: 0 0 30px orange;
+    color:white;
+}
+#home .pictures{
+    position:absolute;
+    top:80%;
+    right:0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+    display: block;
+    gap:15px;
+}
+#home header .pictures img {
+  -webkit-mask-image: radial-gradient(circle, rgb(1, 6, 82) 60%, transparent 100%);
+  mask-image: radial-gradient(circle, rgb(3, 2, 85) 60%, transparent 100%);
+  object-fit: cover;
+  width: 130px;
+  height: 100px;
+}
+#home header .pictures .picture1{
+    margin-top:10px;
+    margin-left: -40px;
+    animation:fade3 1.5s ease-in-out infinite alternate-reverse;
+}
+#home header .pictures .picture2{
+    margin-top:-80px;
+    margin-left:140px;
+    animation:fade2 1.7s ease-in-out infinite alternate-reverse;
+}
+#home header .pictures .picture3{
+    margin-left:50px;
+    margin-top:20px;
+    animation:fade1 2s ease-in-out infinite alternate-reverse;
+}
+@keyframes fade1{
+    from{
+        transform:translate(0px, -0px);
+    }
+    to{
+        transform: translate(0,0px);
+    }
+}
+@keyframes fade2{
+    from{
+        transform:translate(0px, -0px);
+    }
+    to{
+        transform: translate(-0px,0px);
+    }
+}
+
+@keyframes fade3{
+    from{
+        transform:translate(0px, -0px);
+    }
+    to{
+        transform: translate(0px,0px);
+    }
+}
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    top:20%;
+    left:0%;
+}
+#routine header h1{
+    font-size: 31px;
+    margin-left:100px;
+    margin-top: -100px;
+    letter-spacing: 1px;
+}
+.card-container{
+    position: absolute;
+    display: flex;
+    top:100%;
+    left:28%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap:30px;
+}
+#routine header .card-container .card{
+    width: 300px;
+    min-height: 120px;
+    border: 2px solid blue;
+    box-shadow: 0 0 20px blue inset;
+    margin:0px 0;
+    border-radius: 16px;
+    overflow: hidden;
+    text-align: center;
+    padding:10px 20px;
+}
+#routine header .card-container .card i{
+    font-size: 40px;
+    padding:15px 0px;
+    color:rgb(52, 52, 255);
+    border: none;
+    border-radius: 100%;
+}
+#routine header .card-container .card:hover{
+    transform: translate(0,-10px);
+    transition: all 0.5s ease-in-out;
+    box-shadow: 0 0 0px blue inset, 0 0 40px blue;
+}
+#routine header .card-container .card p{
+    font-size: 15px;
+    letter-spacing: 1.2px;
+    font-weight: 500;
+}
+#goals header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+    top:12%;
+    gap:22px;
+}
+#goals header h1{
+    font-size: 33px;
+    letter-spacing: 1px;
+    font-weight:500;
+}
+#goals header .subtitle{
+font-size:15px;
+margin-top:-15px;
+}
+#goals header .cards{
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+    margin-top:0px;
+}
+#goals header .cards .card{
+    width: 250px;
+    min-height: 100px;
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: center;
+    padding:10px 10px;
+    position: relative;
+    z-index:0;
+}
+#goals header .cards .card p{
+    font-size: 20px;
+    letter-spacing: 1.2px;
+    margin-top:40px;
+}
+#goals header .cards .card::after{
+    position: absolute;
+    content:attr(data-goals);
+    background:rgb(0, 0, 58);
+    width: 100%;
+    height: 100%;
+    top:0;
+    left:0;
+    z-index:1;
+    opacity: 0;
+}
+#goals header .cards .card::before{
+    position: absolute;
+    z-index:-1;
+    content:"";
+    background:linear-gradient(42deg,blue,rgb(0, 0, 66),blue,blue,rgb(2, 2, 104),blue,rgb(1, 1, 102));
+    width:calc(100% + 80px);
+    height:calc(100% + 80px);
+    top:0;
+    filter: blur(8px);
+    left:0;
+    background-size: 700%;
+    animation:card 25s linear infinite;
+}
+@keyframes card {
+    0%{background-position: 0 0 0;}
+    50%{background-position: 400% 0;}
+    100%{background-position: 0 0 0;}
+}
+#goals header .cards .card:hover::before{
+    opacity:0;
+}
+#goals header .cards .card:hover{
+    box-shadow:0 0 24px blue;
+    border:2px solid blue;
+    transform: translateY(-10px);
+    transition: 0.4s ease-in-out;
+    color:blue;
+    text-shadow:none;
+}
+
+.tabs{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+    position:relative;
+    top:20%;
+    left:0%;
+}
+.tab-menu{
+    padding:10px 30px;
+    background:rgb(145, 145, 236);
+    box-shadow: 0 0 5px 10px rgba(0,0,0,.1);
+    border-radius: 5px;
+    width: 78%;
+    display: flex;
+    color:white;
+    height: 500px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap:33px;
+    position: relative;
+}
+.tab-menu::after{
+    position: absolute;
+    content:"";
+    width: 100%;
+    height: 55px;
+    border: 2px solid transparent;
+    border-top-color:#02085e;
+    bottom:75%;
+}
+.tab-menu label{
+    background-color:none;
+    color:black;
+    text-shadow: 0 0 0px white;
+    z-index:2;
+    cursor: pointer;
+    border-radius: 30px;
+    width:200px;
+    position: relative; 
+    right:-0%;   
+    bottom:220px;
+    height: 55px;
+    font-size:20px;
+    letter-spacing: 1.3px;
+}
+.tab-menu input[type="radio"]{
+    display: none;
+}
+.contents{
+}
+.contents .content{
+    color:black;
+    display: none;
+    transition: all 0.5s ease-in-out;
+    color:white;
+    position: absolute;
+    right:0%;
+    bottom:1120px;
+    z-index:10;
+}
+.glider{
+    width: 90px;
+    position: absolute;
+    top:10px;
+    left:53px;
+    text-align: center;
+    height: 55px;
+    background: #84abf5;
+    display: block;
+    border-radius: 5px;
+    transition: all 0.4s ease-in-out;
+}
+#tab1:checked ~ label[for="tab1"]{
+    color:#02085e;
+}
+#tab3:checked ~ label[for="tab3"]{
+    color:#01035e;
+}
+#tab4:checked ~ label[for="tab4"]{
+    color:#02045c;
+}
+
+#tab1:checked ~ .contents .c1{
+    display: block;
+}
+#tab3:checked ~ .contents .c3{
+    display: block;
+}
+#tab4:checked ~ .contents .c4{
+    display: block;
+}
+#tab1:checked~.glider{
+transform: translateX(-50px);
+box-shadow: 0 0 0px blue;
+}
+#tab3:checked ~ .glider{
+transform: translateX(44px);
+box-shadow: 0 0 0px blue;
+width: 120px;
+}
+#tab4:checked ~ .glider{
+transform: translateX(180px);
+box-shadow: 0 0 0px blue;
+}
+#skills .cards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:20px;
+    flex-direction: row;
+    width: 100%;
+    position: absolute;
+    top:25%;
+    gap:15px;
+    left:0;
+}
+#skills .cards .card{
+    width: 300px;
+    min-height: 100px;
+    border: 2px solid blue;
+    border-radius: 15px;
+    text-align: center;
+    padding:10px 10px;
+    margin-left:0px;
+    margin-top:70px;
+    user-select: none;
+    background:linear-gradient(to right, rgb(2, 2, 95), rgb(42, 1, 156));
+    color:white;
+    box-shadow: 0 0 30px  blue;
+}
+#skills .cards .card:hover{
+    box-shadow: 0 0 0px inset, 0 0 30px blue;
+    transform: translateY(-10px);
+    transition: all 0.4s ease-in-out;
+    background: white;
+    color:black;
+    user-select: none;
+}
+#skills .cards .pictures{
+    position: absolute;
+    top:115%;
+    left:1%;
+    gap:50px;
+    display: flex;
+    flex-direction: row;
+}
+#skills .cards .pictures img{
+    margin:0px;
+    border-radius: 10px;
+    object-fit: cover;
+    width: 140px;
+    height: 100px;
+    
+}
+#skills ul{
+    list-style: none;
+    font-size: 14px;
+    margin-top:20px;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+#skills header{
+    margin-left:-1%;
+}
+#skills .subtitle{
+    font-size:14px;
+    color:white;
+    margin-top:5px;
+    letter-spacing: 0.3px;
+    margin-left: 10px;
+}
+#skills header h1{
+    font-size: 28px;
+    margin-top:10px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    color:white;
+}
+#motivation .card-icons-with{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    top:19%;
+    gap:40px;
+}
+#motivation .card{
+    width: 300px;
+    min-height: 100px;
+    padding:10px 10px;
+    border: 2px solid blue;
+    border-radius: 12px;
+    box-shadow: 0 0 20px  blue inset;
+    text-align: center;
+    font-size: 22px;
+    letter-spacing: 1px;
+    font-weight:500;
+    user-select: none;
+}
+#motivation .card:hover{
+    box-shadow: 0 0 0px blue inset, 0 0 30px blue;
+    transform: translateY(-10px);
+    transition: all 0.4s ease-in-out;
+    color:white;
+    letter-spacing: 1px;
+    line-height: 1;
+}
+#motivation header{
+    position: relative;
+    top:13%;
+    left:-7%;
+}
+#motivation header h1{
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+#motivation header p{
+    font-size:13px;
+    letter-spacing: 0.9px;
+}
+#contact header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top:13%;
+    left:2%;
+    font-size:20px;
+    flex-direction: column;
+}
+#contact header .text{
+    margin-left:10px;
+    font-size:18px;
+}
+#contact form{
+    position: relative;
+    top:14%;
+    left:3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 310px;
+    min-height:200px;
+    box-shadow:0 0 30px blue inset;
+    border-radius:12px;
+    padding:15px 15px;
+    gap:10px;
+}
+#contact form input{
+    padding:17px 10px;
+    width: 90%;
+    border: none;
+    border-radius: 8px;
+    background: black;
+    color:white;
+    outline:none;
+}
+#contact form input:focus{
+    border: 2px solid blue;
+    box-shadow:0 0 10px blue;
+}
+#contact form textarea{
+    width: 70%;
+    padding:25px 50px;
+    border-radius: 8px; 
+    background: black;
+    color:white;
+    outline:none;
+    border: none;
+}
+#contact form textarea:focus{
+    border: 2px solid blue;
+    color:white;
+    box-shadow:0 0 10px blue;
+}
+#contact form label{
+    font-size:20px;
+    margin-left:-70%;
+}
+#contact form button{
+    padding:15px 20px;
+    width: 70%;
+    border: 2px solid blue;
+    border-radius: 10px;
+    background: black;
+    color:white;
+    margin:10px 0px;
+}
+#contact form button:hover{
+    background: blue;
+    color:white;
+}
+}
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <div class="logo"><span>Discipline</span>
+                <img src="picture4.png" alt="rasm">
+            </div>
+                <label for="checkbox"><i class="fa-solid fa-bars"></i></label>
+                <input type="checkbox" id="checkbox">
+                <div class="bars">
+            <label for="checkbox"><i class="fa-solid fa-xmark"></i></label>
+            <a class="active" href="#home" data-nav="home" id="icon1">Home</a>
+            <a href="#routine" data-nav="routine" id="icon2">Routine</a>
+            <a href="#goals" data-nav="goals" id="icon3">Goals</a>
+            <a href="#skills" data-nav="skills" id="icon4">Skills</a>
+            <a href="#motivation" data-nav="motivation" id="icon5">Motivation</a>
+            <a href="#contact" data-nav="contact" id="icon6">Contact</a>
+            <button href="#login1" data-nav="login1" id="button7">Login</button>
+            <!--label icons-->
+            <div class="icons">
+            <label class="icon" for="icon1"><i class="fa-solid fa-house"></i></label>
+            <label class="icon" for="icon2"><i class="fa-solid fa-business-time"></i></label>
+            <label class="icon" for="icon3"><i class="fa-solid fa-bullseye"></i></label>
+            <label class="icon" for="icon4"><i class="fa-brands fa-think-peaks"></i></label>
+            <label class="icon" for="icon5"><i class="fa-solid fa-chart-line"></i></label>
+            <label class="icon" for="icon6"><i class="fa-solid fa-address-book"></i></label>   
+             </div>
+        </nav>
+        </div>
+    </header>
+    <section class="section active" id="home">
+        <header>
+            <h1>Become the best Version of Yourself</h1>
+            <span>Discipline is choosing what you want most over what you want now This webiste shows my journey of growth, focus and stength.</span>
+            <div class="home-buttons">
+            <button class="my-routine" data-routine="My routine">My routine</button>
+            <button class="my-goals" data-routine="My goals">My goals</button>
+            </div>
+            <div class="icons">
+                <i class="fa-brands fa-github"></i>
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-youtube"></i>
+                <i class="fa-brands fa-google"></i>
+            </div>
+            <div class="pictures">
+                <img class="picture1" src="picture1.jpg">
+                <img  class="picture2" src="picture2.jpg" alt="rasm">
+                <img class="picture3"src="picture3.jpg" alt="rasm">
+            </div>
+        </header>
+    </section>
+    <section class="section" id="routine">
+        <header>
+            <h1>My daily routine</h1>
+        <div class="card-container">
+            <div class="card">
+                <span><i class="fa-solid fa-brain"></i></span>
+                <p>I wake up early, pray and start my day with a clear mind</p>
+            </div>
+      <div class="card">
+                <span><i class="fa-solid fa-graduation-cap"></i></span>
+                <p>Every day I improve my English, logic, and knowledge step by step.</p>
+            </div>
+                  <div class="card">
+                <span><i class="fa-solid fa-dumbbell"></i></span>
+                <p>Strength builds confidence. I train my body to strengthen my mind.</p>
+            </div>
+                  <div class="card">
+                <span><i class="fa-solid fa-cloud-moon"></i></span>
+                <p>I analyze my day and plan tomorrow.</p>
+            </div>
+        </div>
+        </header>
+    </section>
+    <section class="section" id="goals">
+        <header>
+            <h1>My Long-Term Goals</h1>
+            <p class="subtitle">Small steps every day create big results.</p>
+        <div class="cards">
+            <div class="card"><p>Pass CEFR & IELTS</p></div>
+            <div class="card"><p>Become a Web Developer</p></div>
+            <div class="card"><p>Build a strong body</p></div>
+            <div class="card"><p>Grow mentally & spiritually</p></div>
+            <div class="card"><p>Support my parents</p></div>
+        </div>
+        </header>
+    </section>
+    <section class="section" id="skills">
+<div class="tabs">
+  <div class="tab-menu">
+    <input type="radio" name="tabs" checked id="tab1">
+    <label for="tab1" data-content="Html">Html</label>
+    <input type="radio" name="tabs" id="tab3">
+    <label for="tab3" data-content="Discipline">Discipline</label>
+
+    <input type="radio" name="tabs" id="tab4">
+    <label for="tab4" data-content="Fitness">Fitness</label>
+    <div class="glider"></div>
+    <!-- MUHIM: CONTENTLAR SHU YERDA -->
+    <div class="contents">
+      <div class="content c1">
+        <header>
+            <h1>
+                Web Development skills
+            </h1>
+            <p class="subtitle">I am learning web development step by step.
+I focus on clean structure, simple design, and real practice.</p>
+        </header>
+        <div class="cards">
+            <div class="card">
+            <ul>
+                <li> HTML – Page structure</li>
+                <li>CSS – Layout, colors, animations</li>
+                <li>Responsive Design – Mobile friendly</li>
+                <li>Practice – Real projects</li>
+            </ul>
+        </div>
+            <div class="pictures">
+                <img src="picture.5.jpg" alt="rasm">
+                <img src="picture6.jpg" alt="rasm">
+            </div>
+        </div>
+        </div>
+      </div>
+      <div class="content c3">
+        <p>Content is not available</p></div>
+      <div class="content c4">Content is not available</div>
+    </div>
+  </div>
+    </section>
+    <section class="section" id="motivation">
+        <header><h1>
+            Here Motivation is
+            <p class="subtitle">The website motivates you at all</p>
+        </h1></header>
+        <div class="card-icons-with">
+            <div class="card">
+                Hard times create strong people
+            </div>
+                <div class="card">
+               “Discipline beats motivation.”
+            </div>
+                <div class="card">
+                “No comfort, only progress.”
+            </div>
+            
+        </div>
+    </section>
+    <section class="section" id="contact">
+        <header>
+            <h1>Contact me</h1>
+            <subtitle class="text">If you want to improve yourself, write to me</subtitle>
+        </header>
+        <form>
+            <h1>Send message</h1>
+            <label for="name">Name</label>
+            <input type="name" placeholder="Name" id="name">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Email">
+            <label for="textarea">Message</label>
+            <textarea placeholder="Feedback with some details..." id="textarea" type="text" row="10">
+            </textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+    <section class="section" id="login1">
+        <div class="container" id="container">
+        <div class="form-container sign-in">
+            <form>
+               <header>
+                <h1>Sign in</h1>
+               </header>
+               <div class="field">
+                <input type="email" id="email" placeholder="Email" required>
+                <small></small>
+               </div>
+               <div class="field">
+                <input type="password" id="password" placeholder="Password">
+                <small></small>
+               </div>
+               <button>Sign in</button>
+               <p>Other social platforms</p>
+               <div class="icons">
+                <a data-icon="Facebook" style="--accent-color: blue;"><i class="fa-brands fa-facebook-f"></i></a>
+                <a data-icon="Facebook" style="--accent-color: orange;"><i class="fa-brands fa-google-plus-g"></i></a>
+                <a data-icon="Facebook" style="--accent-color: red;"><i class="fa-brands fa-instagram"></i></a>
+                <a data-icon="Facebook" style="--accent-color:rgb(96, 200, 241);"><i class="fa-brands fa-twitter"></i></a>
+               </div>
+            </form>
+        </div>
+        <div class="form-container sign-up">
+            <form>
+               <header>
+                <h1>Create Account</h1>
+               </header>
+               <div class="field">
+                <input type="text" placeholder="Username" required>
+                <small></small>
+               </div>
+                <div class="field">
+                <input type="email" placeholder="Email" required>
+                <small></small>
+               </div>
+               <div class="field">
+                <input type="password" placeholder="Password">
+                <small></small>
+               </div>
+               <button>Sign up</button>
+            </form>
+        </div>
+       <div class="toggle-container">
+        <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <header>
+                        <h1 style="font-size:30px; margin-left:10px; margin-top:-10px;">Welcome back!</h1>
+                        <span  style="font-size:13px; position:relative; top:-1px;">enter your account to have a profile on your own</span>
+                    </header>
+                    <button class="hidden"  style="position: absolute; left:30%; top:55%; padding:10px 20px;" id="register">Sign up</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <header>
+                        <h1 style="font-size:30px; margin-left:25px; margin-top:-15px;">Hello, Friend!</h1>
+                        <span  style="font-size:14px; position:relative; top:-0px; left:4px;">register your account to use all of features</span>
+                    </header>
+                    <button class="hidden"  style="position: absolute; left:30%; top:55%; padding:10px 20px;" id="login">Sign up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="model" id="model">
+      <span class="circle"></span>
+    </div>
+    </section>
+    <script>
+        const links=document.querySelectorAll(".nav a");
+links.forEach(link=>{
+  link.addEventListener("click", e=>{
+    e.preventDefault();
+    links.forEach(l=>l.classList.remove("active"));
+    link.classList.add("active");
+    const id=link.dataset.nav;
+    const section=document.getElementById(id);
+
+    section.scrollIntoView({
+      behavior:"smooth",
+      block:"start"
+    });
+  });
+});
+
+const buttons=document.querySelectorAll(".login");
+const wrappers=document.querySelectorAll(".wrapper");
+
+buttons.forEach(btn=>{
+  btn.addEventListener("click", e=>{
+    e.preventDefault();
+    console.log('bosildi');
+    wrappers.forEach(w=>w.style.display="none");
+
+    const id=btn.dataset.wrapper;
+    document.getElementById(id).style.display="block";
+  });
+});
+const accheaders=document.querySelectorAll(".acc-haeder");
+
+accheaders.forEach(header=>{
+  header.addEventListener("click", ()=>{
+    header.parentElement.classList.toggle("active");
+  });
+});
+
+const registerbtn=document.getElementById("register");
+const loginbtn=document.getElementById("login");
+const container=document.getElementById("container");
+
+loginbtn.addEventListener("click", ()=>{
+  container.classList.add("active");
+});
+
+registerbtn.addEventListener("click", ()=>{
+  container.classList.remove("active");
+});
+
+const loginbutton=document.getElementById("button7");
+
+loginbutton.addEventListener("click", function(){
+    setTimeout(function() {
+   window.location.href="Login.html";
+    }, 300);
+});
+    </script>
+</body>
+</html>
